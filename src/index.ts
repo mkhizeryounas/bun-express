@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'src', 'public')));
 
 app.use(function (_: Request, res: Response): void {
   respond(res, {
-    code: 404
+    code: 404,
   });
 });
 

@@ -1,4 +1,5 @@
 import type { Response } from 'express';
+import logger from './logger';
 
 const COMMON_MESSAGES: any = {
   200: 'Request processed successfully.',
@@ -23,12 +24,9 @@ export const respond = (
     code: 200,
   }
 ) => {
-  let { code, data, message } = args;
-  if (!message) {
-    message = COMMON_MESSAGES[code];
-  }
+  const { code, data, message } = args;
   res.status(code).json({
-    message,
+    message: message ?? COMMON_MESSAGES[code],
     [code >= 400 ? 'errors' : 'data']: data,
   });
 };
