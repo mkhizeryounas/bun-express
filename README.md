@@ -1,4 +1,4 @@
-# express
+# bun-express
 
 To install dependencies:
 
