@@ -11,13 +11,15 @@ const COMMON_MESSAGES: any = {
   503: 'Server is down or unavailable to receive and process the request',
 };
 
+type Args = {
+  code: number;
+  data?: any;
+  message?: string;
+};
+
 export const respond = (
   res: Response,
-  args: {
-    code: number;
-    data?: any;
-    message?: string;
-  } = {
+  args: Args = {
     code: 200,
   }
 ) => {
