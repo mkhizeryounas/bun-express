@@ -13,7 +13,6 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'src', 'public')));
 
 app.use(function (_: Request, res: Response): void {
   respond(res, {
