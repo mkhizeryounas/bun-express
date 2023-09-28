@@ -1,5 +1,4 @@
 import type { Response } from 'express';
-import logger from './logger';
 
 const COMMON_MESSAGES: any = {
   200: 'Request processed successfully.',
