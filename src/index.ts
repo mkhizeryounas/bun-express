@@ -6,6 +6,7 @@ import type { Request, Response } from 'express';
 import logger from './utils/logger';
 import { PORT } from './constants';
 import respond from './utils/respond';
+import routes from './routes';
 
 const app = express();
 
@@ -13,6 +14,8 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use('/api', routes);
 
 app.use(function (_: Request, res: Response): void {
   respond(res, {

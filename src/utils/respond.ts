@@ -13,22 +13,23 @@ const COMMON_MESSAGES: any = {
 };
 
 type Args = {
-  code: number;
+  code?: number;
   data?: any;
   message?: string;
 };
 
-export const respond = (
-  res: Response,
-  args: Args = {
-    code: 200,
-  }
-) => {
-  const { code, data, message } = args;
-  res.status(code).json({
-    message: message ?? COMMON_MESSAGES[code],
-    [code >= 400 ? 'errors' : 'data']: data,
-  });
+export const respond = (res: Response, args: Args) => {
+  let { code, data, message } = args;
+  code = code ?? 200;
+  message = message ?? COMMON_MESSAGES[code];
+  data =
+    code >= 400
+      ? {
+          message,
+          errors: data,
+        }
+      : data;
+  res.status(code).json(data);
 };
 
 export default respond;
