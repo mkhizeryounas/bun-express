@@ -5,7 +5,7 @@ import respond from '../utils/respond';
 const router = express.Router();
 
 router.get('/', async function (_: Request, res: Response): Promise<void> {
-  respond(res, {
+  return respond(res, {
     data: {
       status: 'OK',
     },
