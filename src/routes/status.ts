@@ -7,8 +7,8 @@ const router = express.Router();
 router.get('/', async function (_: Request, res: Response): Promise<void> {
   return respond(res, {
     data: {
-      status: 'OK',
-    },
+      status: 'OK'
+    }
   });
 });
 

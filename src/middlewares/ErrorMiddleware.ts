@@ -20,7 +20,7 @@ export default function (err: any, _: Request, res: Response, next: any): void {
       : err.name === 'MongoError'
       ? err
       : err.data,
-    message: err.message,
+    message: err.message
   });
   next();
 }

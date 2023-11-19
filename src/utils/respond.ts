@@ -15,7 +15,7 @@ export const respond = (res: Response, args: Args) => {
     code >= 400
       ? {
           message,
-          errors: data,
+          errors: data
         }
       : data;
   res.status(code).json(data);

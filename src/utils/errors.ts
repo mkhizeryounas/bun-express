@@ -12,7 +12,7 @@ export const COMMON_MESSAGES: CommonMessages = {
   403: 'The client is not allowed access the resource.',
   404: 'The requested resource is not available.',
   500: 'Request can not be processed due to unexpected internal server error.',
-  503: 'Server is down or unavailable to receive and process the request',
+  503: 'Server is down or unavailable to receive and process the request'
 };
 
 const BaseError = (code: number, message?: string) => {
